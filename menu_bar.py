@@ -10,24 +10,6 @@ icon = QIcon("color.png")
 clipboard = QApplication.clipboard()
 dialog = QColorDialog()
 
-def copy_color_hex():
-    if dialog.exec_():
-        color = dialog.currentColor()
-        clipboard.setText(color.name())
-
-def copy_color_rgb():
-    if dialog.exec_():
-        color = dialog.currentColor()
-        clipboard.setText("rgb(%d, %d, %d)" % (
-            color.red(), color.green(), color.blue()
-        ))
-
-def copy_color_hsv():
-    if dialog.exec_():
-        color = dialog.currentColor()
-        clipboard.setText("hsv(%d, %d, %d)" % (
-            color.hue(), color.saturation(), color.value()
-        ))
 
 # Create the tray
 tray = QSystemTrayIcon()
@@ -37,18 +19,24 @@ tray.setVisible(True)
 # Create the menu
 menu = QMenu()
 action1 = QAction("Hex")
-action1.triggered.connect(copy_color_hex)
 menu.addAction(action1)
 
 action2 = QAction("RGB")
-action2.triggered.connect(copy_color_rgb)
 menu.addAction(action2)
 
 action3 = QAction("HSV")
-action3.triggered.connect(copy_color_hsv)
 menu.addAction(action3)
 
 # Add the menu to the tray
 tray.setContextMenu(menu)
 
 app.exec_()
+
+
+pirm=  ['', '', 'English HL', 'English HL', 'IP', 'Lithuanian Literature SL', 'Lithuanian Literature SL', 'CS SL', 'CS SL' ]
+antr=  ['CS SL', 'CS SL', 'Mathematics SL', 'Mathematics SL', 'IP', 'Physics SL', 'Physics SL', 'Economics SL', 'Economics SL' ]
+trec=  ['St. Mess', 'English HL', 'English HL', 'Mathematics HL', 'Mathematics HL', 'IP', 'Religion', 'Physics SL', 'Physics SL' ]
+ketv=  ['Lithuanian Literature SL', 'Lithuanian Literature SL', 'Economics SL', 'Economics SL', 'IP', 'TOK', 'TOK', 'CS HL', 'CS HL' ]
+penkt=  ['Mathematics SL', 'Mathematics SL', 'English HL', 'English HL', '', '', '', '', '']
+
+time = ['8:00-8:45', '8:55-9:40', '9:50-10:35']
