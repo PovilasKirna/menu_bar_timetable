@@ -65,7 +65,7 @@ def output(day):
     elif day == 3:
         for lesson in range(9):
             make_lesson(ketv[lesson], ketv_kab[lesson], time[lesson], lesson)
-    else:
+    elif day == 4:
         for lesson in range(9):
             make_lesson(penkt[lesson], penkt_kab[lesson], time[lesson], lesson)
 
@@ -82,7 +82,7 @@ def output_table(day):
     elif day == 3:
         for lesson in range(9):
             make_lesson_table(ketv[lesson], ketv_kab[lesson], time[lesson], lesson)
-    else:
+    elif day == 4:
         for lesson in range(9):
             make_lesson_table(penkt[lesson], penkt_kab[lesson], time[lesson], lesson)
 
