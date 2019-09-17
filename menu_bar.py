@@ -2,10 +2,10 @@
 import time
 import datetime 
 
-pirm=  ['', '', 'English HL', 'English HL', 'IP', 'Lithuanian Literature SL', 'Lithuanian Literature SL', 'CS SL', 'CS SL' ]
+pirm=  ['', '', 'English HL', 'English HL', 'IP', 'Lithuanian SL', 'Lithuanian SL', 'CS SL', 'CS SL' ]
 antr=  ['CS SL', 'CS SL', 'Mathematics SL', 'Mathematics SL', 'IP', 'Physics SL', 'Physics SL', 'Economics SL', 'Economics SL' ]
 trec=  ['St. Mess', 'English HL', 'English HL', 'Mathematics HL', 'Mathematics HL', 'IP', 'Religion', 'Physics SL', 'Physics SL' ]
-ketv=  ['Lithuanian Literature SL', 'Lithuanian Literature SL', 'Economics SL', 'Economics SL', 'IP', 'TOK', 'TOK', 'CS HL', 'CS HL' ]
+ketv=  ['Lithuanian SL', 'Lithuanian SL', 'Economics SL', 'Economics SL', 'IP', 'TOK', 'TOK', 'CS HL', 'CS HL' ]
 penkt=  ['Mathematics SL', 'Mathematics SL', 'English HL', 'English HL', '', '', '', '', '']
 
 time = ['8:00-8:45', '8:55-9:40', '9:50-10:35', '10:40-11:25', '11:30-12:15', '12:25-13:10', '13:20-14:05', '14:15-15:00', '15:05-15:50']
@@ -69,6 +69,7 @@ def output(day):
         for lesson in range(9):
             make_lesson(penkt[lesson], penkt_kab[lesson], time[lesson], lesson)
 
+
 def output_table(day):
     if day == 0:
         for lesson in range(9):
@@ -86,6 +87,13 @@ def output_table(day):
         for lesson in range(9):
             make_lesson_table(penkt[lesson], penkt_kab[lesson], time[lesson], lesson)
 
-output(checkday())
+def checklate():
+    if checktime() > time_r[8]:
+        print("HW")
+    elif checktime() >= 0 and checktime() < time_r[0]:
+        print("HW")
+
+checklate()
+output(checkday()) 
 print("---")
 output_table(checkday())
